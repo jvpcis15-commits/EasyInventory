@@ -6,27 +6,77 @@ A aplicação teria como objetivo permitir o gerenciamento de produtos de uma pe
 
 Funcionalidades do Sistema
 Cadastrar produtos;
+
 Listar produtos cadastrados;
+
 Editar informações dos produtos;
+
 Excluir produtos;
+
 Armazenar os dados em banco de dados.
+
 Informações que cada produto pode possuir
+
 Nome do produto;
+
 Descrição;
+
 Preço;
+
 Quantidade em estoque;
+
 Categoria.
 
 Tecnologias sugeridas
-Front-end
-HTML
-CSS
-JavaScript
-Back-end
-Node.js
-Express.js
-Banco de Dados
-MySQL
-Ferramentas
-Visual Studio Code
-Git
+
+Front-end:
+HTML;
+CSS;
+JavaScript.
+
+Back-end:
+Node.js;
+Express.js.
+
+Banco de Dados:
+MySQL.
+
+Ferramentas:
+Visual Studio Code;
+Git.
+
+Estrutura
+
+simplestock/
+│
+├── backend/
+│   │
+│   ├── database/
+│   │   └── connection.js
+│   │
+│   ├── controllers/
+│   │   └── productController.js
+│   │
+│   ├── models/
+│   │   └── productModel.js
+│   │
+│   ├── routes/
+│   │   └── productRoutes.js
+│   │
+│   ├── server.js
+│   ├── package.json
+│   └── .env
+│
+├── frontend/
+│   │
+│   ├── css/
+│   │   └── style.css
+│   │
+│   ├── js/
+│   │   └── script.js
+│   │
+│   └── index.html
+│
+├── README.md
+└── .gitignore
+
