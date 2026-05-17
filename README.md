@@ -48,35 +48,66 @@ Git.
 Estrutura
 
 simplestock/
+
 │
+
 ├── backend/
+
 │   │
+
 │   ├── database/
+
 │   │   └── connection.js
+
 │   │
+
 │   ├── controllers/
+
 │   │   └── productController.js
+
 │   │
+
 │   ├── models/
+
 │   │   └── productModel.js
+
 │   │
+
 │   ├── routes/
+
 │   │   └── productRoutes.js
+
 │   │
+
 │   ├── server.js
+
 │   ├── package.json
+
 │   └── .env
+
 │
+
 ├── frontend/
+
 │   │
+
 │   ├── css/
+
 │   │   └── style.css
+
 │   │
+
 │   ├── js/
+
 │   │   └── script.js
+
 │   │
+
 │   └── index.html
+
 │
+
 ├── README.md
+
 └── .gitignore
 
