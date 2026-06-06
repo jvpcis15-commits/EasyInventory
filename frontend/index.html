@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EasyInventory</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>EasyInventory</h1>
+        <p>Sistema de Cadastro de Produtos</p>
+    </header>
+
+    <main>
+
+        <section class="form-container">
+            <h2>Novo Produto</h2>
+
+            <form id="productForm">
+
+                <input type="text" placeholder="Nome do produto" required>
+
+                <textarea placeholder="Descrição"></textarea>
+
+                <input type="number" placeholder="Preço" step="0.01" required>
+
+                <input type="number" placeholder="Quantidade" required>
+
+                <input type="text" placeholder="Categoria">
+
+                <button type="submit">
+                    Salvar Produto
+                </button>
+
+            </form>
+        </section>
+
+        <section class="table-container">
+            <h2>Produtos Cadastrados</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Categoria</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td>1</td>
+                        <td>Notebook</td>
+                        <td>R$ 3500,00</td>
+                        <td>5</td>
+                        <td>Informática</td>
+                        <td>
+                            <button>Editar</button>
+                            <button>Excluir</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
