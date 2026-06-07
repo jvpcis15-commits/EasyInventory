@@ -10,40 +10,54 @@ Ambiente de Desenvolvimento
 O projeto foi desenvolvido utilizando:
 
 Sistema Operacional: Windows 11
+
 Editor de Código: Visual Studio Code
+
 Controle de Versão: Git
+
 Repositório Remoto: GitHub
+
 Ambiente de Execução: Node.js
+
 Banco de Dados: MySQL (XAMPP)
+
 Tecnologias Utilizadas
+
 Front-end
 HTML5
 CSS3
 JavaScript
+
 Back-end
 Node.js
 Express.js
 CORS
 Dotenv
+
 Banco de Dados
 MySQL
+
 Controle de Versão
 Git
 GitHub
+
 Requisitos do Sistema
 
 Para executar a aplicação é necessário possuir:
 
-Node.js versão 18 ou superior
-npm instalado
-MySQL 8.0 ou superior
-Navegador web atualizado (Chrome, Edge ou Firefox)
-Git (opcional)
-Instalação e Execução
+Node.js versão 18 ou superior;
+npm instalado;
+MySQL 8.0 ou superior;
+Navegador web atualizado (Chrome, Edge ou Firefox);
+Git (opcional);
+Instalação e Execução;
+
 1. Clonar o repositório
 git clone https://github.com/jvpcis15-commits/EasyInventory.git
+
 2. Acessar a pasta do projeto
 cd EasyInventory
+
 3. Instalar as dependências
 
 Na pasta backend:
