@@ -60,6 +60,7 @@ Criar a tabela:
 
 CREATE TABLE produtos (
     id INT AUTO_INCREMENT PRIMARY KEY,
+    
     nome VARCHAR(100) NOT NULL,
     descricao TEXT,
     preco DECIMAL(10,2) NOT NULL,
@@ -67,17 +68,23 @@ CREATE TABLE produtos (
     categoria VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 5. Configurar o arquivo .env
 
 Criar um arquivo .env dentro da pasta backend:
 
 DB_HOST=localhost
+
 DB_USER=root
+
 DB_PASSWORD=sua_senha
+
 DB_NAME=easyinventory
+
 DB_PORT=3306
 
 PORT=3000
+
 6. Executar o servidor
 
 Na pasta backend:
@@ -98,17 +105,29 @@ ou utilizar a extensão Live Server do Visual Studio Code.
 
 Funcionalidades
 Requisitos Funcionais
+
 RF01 – Cadastrar produtos
+
 RF02 – Listar produtos cadastrados
+
 RF03 – Editar informações dos produtos
+
 RF04 – Excluir produtos
+
 RF05 – Armazenar dados em banco de dados
+
 RF06 – Exibir mensagens de confirmação ao usuário
+
 Requisitos Não Funcionais
+
 RNF01 – Interface simples e responsiva
+
 RNF02 – Tempo de resposta adequado
+
 RNF03 – Organização do código utilizando boas práticas
+
 Estrutura do Projeto
+
 EasyInventory
 │
 ├── backend
@@ -141,9 +160,13 @@ Testes da Aplicação
 Foram realizados testes manuais para validar as funcionalidades principais:
 
 Cadastro de produtos.
+
 Listagem de produtos.
+
 Atualização de produtos.
+
 Exclusão de produtos.
+
 Integração entre Front-end, API e banco de dados.
 
 Atualmente o projeto não possui testes automatizados implementados. Como melhoria futura, podem ser utilizados frameworks como Jest e Supertest para automatizar os testes da API.
