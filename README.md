@@ -21,7 +21,7 @@ Ambiente de Execução: Node.js
 
 Banco de Dados: MySQL (XAMPP)
 
-Tecnologias Utilizadas
+=======Tecnologias Utilizadas=======
 
 Front-end
 HTML5
@@ -41,7 +41,7 @@ Controle de Versão
 Git
 GitHub
 
-Requisitos do Sistema
+============Requisitos do Sistema===============
 
 Para executar a aplicação é necessário possuir:
 
@@ -73,8 +73,8 @@ USE easyinventory;
 Criar a tabela:
 
 CREATE TABLE produtos (
+
     id INT AUTO_INCREMENT PRIMARY KEY,
-    
     nome VARCHAR(100) NOT NULL,
     descricao TEXT,
     preco DECIMAL(10,2) NOT NULL,
@@ -117,7 +117,7 @@ frontend/index.html
 
 ou utilizar a extensão Live Server do Visual Studio Code.
 
-Funcionalidades
+=========Funcionalidades===========
 Requisitos Funcionais
 
 RF01 – Cadastrar produtos
@@ -140,7 +140,7 @@ RNF02 – Tempo de resposta adequado
 
 RNF03 – Organização do código utilizando boas práticas
 
-Estrutura do Projeto
+=========Estrutura do Projeto===========
 
 EasyInventory
 │
@@ -158,7 +158,7 @@ EasyInventory
 │   └── index.html
 │
 └── README.md
-Práticas de Código Limpo
+===========Práticas de Código Limpo==============
 
 Durante o desenvolvimento foram aplicadas as seguintes práticas:
 
@@ -181,11 +181,11 @@ Atualização de produtos.
 
 Exclusão de produtos.
 
-Integração entre Front-end, API e banco de dados.
+===========Integração entre Front-end, API e banco de dados.==========
 
 Atualmente o projeto não possui testes automatizados implementados. Como melhoria futura, podem ser utilizados frameworks como Jest e Supertest para automatizar os testes da API.
 
-Padrão de Projeto Utilizado
+===========Padrão de Projeto Utilizado==============
 
 O projeto utiliza o padrão arquitetural MVC (Model-View-Controller).
 
