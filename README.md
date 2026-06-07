@@ -47,7 +47,7 @@ Git.
 
 Estrutura
 
-simplestock/
+easyinventory/
 
 │
 
