@@ -293,4 +293,4 @@ git push origin minha-feature
 
 **João Vitor**
 
-Projeto acadêmico desenvolvido para a disciplina de Análise e Desenvolvimento de Sistemas, aplicando conceitos de desenvolvimento Full Stack, banco de dados, arquitetura MVC e testes automatizados.
+Projeto acadêmico desenvolvido para a disciplina de Análise e Desenvolvimento de Sistemas, aplicando conceitos de desenvolvimento Full Stack, banco de dados, arquitetura MVC e testes automatizados para a Avaliação de Tecnologias Emergentes
