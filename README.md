@@ -1,113 +1,168 @@
-# EasyInventory
-Trabalho de Tecnologias Emergentes
-Sistema de Cadastro de Produtos
+EasyInventory Descrição do Projeto
 
-A aplicação teria como objetivo permitir o gerenciamento de produtos de uma pequena loja ou estoque, utilizando as operações de CRUD.
+O EasyInventory é uma aplicação web desenvolvida para gerenciamento de estoque de produtos. O sistema permite cadastrar, listar, editar e excluir produtos, armazenando as informações em um banco de dados MySQL.
 
-Funcionalidades do Sistema
-Cadastrar produtos;
+O objetivo do projeto é aplicar conceitos de desenvolvimento web Full Stack, integrando uma interface simples com uma API REST desenvolvida em Node.js e um banco de dados relacional.
 
-Listar produtos cadastrados;
+Ambiente de Desenvolvimento
 
-Editar informações dos produtos;
+O projeto foi desenvolvido utilizando:
 
-Excluir produtos;
+Sistema Operacional: Windows 11
 
-Armazenar os dados em banco de dados.
+Editor de Código: Visual Studio Code
 
-Informações que cada produto pode possuir
+Controle de Versão: Git
 
-Nome do produto;
+Repositório Remoto: GitHub
 
-Descrição;
+Ambiente de Execução: Node.js
 
-Preço;
+Banco de Dados: MySQL (XAMPP)
 
-Quantidade em estoque;
+=======Tecnologias Utilizadas=======
 
-Categoria.
+Front-end HTML5 CSS3 JavaScript
 
-Tecnologias sugeridas
+Back-end Node.js Express.js CORS Dotenv
 
-Front-end:
-HTML;
-CSS;
-JavaScript.
+Banco de Dados MySQL
 
-Back-end:
-Node.js;
-Express.js.
+Controle de Versão Git GitHub
 
-Banco de Dados:
-MySQL.
+============Requisitos do Sistema===============
 
-Ferramentas:
-Visual Studio Code;
-Git.
+Para executar a aplicação é necessário possuir:
 
-Estrutura
+Node.js versão 18 ou superior; npm instalado; MySQL 8.0 ou superior; Navegador web atualizado (Chrome, Edge ou Firefox); Git (opcional); Instalação e Execução;
 
-simplestock/
+Clonar o repositório git clone https://github.com/jvpcis15-commits/EasyInventory.git
 
-│
+Acessar a pasta do projeto cd EasyInventory
 
-├── backend/
+Instalar as dependências
 
-│   │
+Na pasta backend:
 
-│   ├── database/
+npm install 4. Criar o banco de dados CREATE DATABASE easyinventory;
 
-│   │   └── connection.js
+Selecionar o banco:
 
-│   │
+USE easyinventory;
 
-│   ├── controllers/
+Criar a tabela:
 
-│   │   └── productController.js
+CREATE TABLE produtos (
 
-│   │
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(100) NOT NULL,
+descricao TEXT,
+preco DECIMAL(10,2) NOT NULL,
+quantidade INT NOT NULL,
+categoria VARCHAR(50),
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
-│   ├── models/
+Configurar o arquivo .env
+Criar um arquivo .env dentro da pasta backend:
 
-│   │   └── productModel.js
+DB_HOST=localhost
 
-│   │
+DB_USER=root
 
-│   ├── routes/
+DB_PASSWORD=sua_senha
 
-│   │   └── productRoutes.js
+DB_NAME=easyinventory
 
-│   │
+DB_PORT=3306
 
-│   ├── server.js
+PORT=3000
 
-│   ├── package.json
+Executar o servidor
+Na pasta backend:
 
-│   └── .env
+node server.js
 
-│
+Mensagem esperada:
 
-├── frontend/
+Conectado ao MySQL com sucesso! Servidor rodando na porta 3000 7. Executar o Front-end
 
-│   │
+Abrir o arquivo:
 
-│   ├── css/
+frontend/index.html
 
-│   │   └── style.css
+ou utilizar a extensão Live Server do Visual Studio Code.
 
-│   │
+=========Funcionalidades=========== Requisitos Funcionais
 
-│   ├── js/
+RF01 – Cadastrar produtos
 
-│   │   └── script.js
+RF02 – Listar produtos cadastrados
 
-│   │
+RF03 – Editar informações dos produtos
 
-│   └── index.html
+RF04 – Excluir produtos
 
-│
+RF05 – Armazenar dados em banco de dados
 
-├── README.md
+RF06 – Exibir mensagens de confirmação ao usuário
 
-└── .gitignore
+Requisitos Não Funcionais
 
+RNF01 – Interface simples e responsiva
+
+RNF02 – Tempo de resposta adequado
+
+RNF03 – Organização do código utilizando boas práticas
+
+=========Estrutura do Projeto===========
+
+EasyInventory │ ├── backend │ ├── controllers │ ├── models │ ├── routes │ ├── database │ ├── server.js │ └── .env │ ├── frontend │ ├── css │ ├── js │ └── index.html │ └── README.md ===========Práticas de Código Limpo==============
+
+Durante o desenvolvimento foram aplicadas as seguintes práticas:
+
+Separação das responsabilidades utilizando o padrão MVC. Organização do código em pastas específicas. Utilização de nomes claros para variáveis e funções. Reutilização de funções sempre que possível. Padronização das rotas da API. Uso de variáveis de ambiente para informações sensíveis. Estrutura modular para facilitar manutenção e evolução do sistema. Testes da Aplicação
+
+Foram realizados testes manuais para validar as funcionalidades principais:
+
+Cadastro de produtos.
+
+Listagem de produtos.
+
+Atualização de produtos.
+
+Exclusão de produtos.
+
+===========Integração entre Front-end, API e banco de dados.==========
+
+Testes da Aplicação
+
+Foram implementados testes automatizados para validar o funcionamento da API REST utilizando as bibliotecas Jest e Supertest.
+
+Os testes desenvolvidos verificam as principais operações CRUD da aplicação:
+
+GET /produtos – Listagem de produtos cadastrados. POST /produtos – Cadastro de novos produtos. PUT /produtos/ – Atualização dos dados de um produto. DELETE /produtos/ – Exclusão de um produto.
+
+Os testes permitem validar automaticamente o comportamento da API, contribuindo para a identificação de erros e garantindo maior confiabilidade durante futuras manutenções e evoluções do sistema.
+
+Para executar os testes automatizados, utilize o comando:
+
+npm test
+
+Os testes estão localizados na pasta:
+
+backend/tests/product.test.js
+
+===========Padrão de Projeto Utilizado==============
+
+O projeto utiliza o padrão arquitetural MVC (Model-View-Controller).
+
+Model: responsável pelo acesso e manipulação dos dados no banco. Controller: responsável pela lógica da aplicação. View: responsável pela interface apresentada ao usuário.
+
+Esse padrão melhora a organização do código e facilita a manutenção do sistema.
+
+Como Contribuir Faça um Fork do projeto. Crie uma branch para suas alterações: git checkout -b minha-feature Realize as modificações necessárias. Faça o commit: git commit -m "Descrição da alteração" Envie para o GitHub: git push origin minha-feature Abra um Pull Request para análise. Autor
+
+João Vitor
+
+Projeto acadêmico desenvolvido para a disciplina de Análise e Desenvolvimento de Sistemas, com o objetivo de aplicar conceitos de desenvolvimento Full Stack, integração com banco de dados e arquitetura MVC
