@@ -1,39 +1,63 @@
 const form = document.getElementById("productForm");
 const tableBody = document.getElementById("productTableBody");
 
-let idCounter = 1;
+function carregarProdutos() {
+    fetch('http://localhost:3000/produtos')
+        .then(res => res.json())
+        .then(data => {
+            tableBody.innerHTML = "";
 
+            data.forEach(produto => {
+                const row = document.createElement("tr");
+
+                row.innerHTML = `
+                    <td>${produto.id}</td>
+                    <td>${produto.nome}</td>
+                    <td>R$ ${parseFloat(produto.preco).toFixed(2)}</td>
+                    <td>${produto.quantidade}</td>
+                    <td>
+                        <button onclick="deletarProduto(${produto.id})">Excluir</button>
+                    </td>
+                `;
+
+                tableBody.appendChild(row);
+            });
+        });
+}
+
+// CREATE (salvar no banco)
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const nome = document.getElementById("nome").value;
-    const descricao = document.getElementById("descricao").value;
     const preco = document.getElementById("preco").value;
     const quantidade = document.getElementById("quantidade").value;
-    const categoria = document.getElementById("categoria").value;
 
-    const row = document.createElement("tr");
-
-    row.innerHTML = `
-        <td>${idCounter}</td>
-        <td>${nome}</td>
-        <td>R$ ${parseFloat(preco).toFixed(2)}</td>
-        <td>${quantidade}</td>
-        <td>${categoria}</td>
-        <td>
-            <button class="delete-btn">Excluir</button>
-        </td>
-    `;
-
-    tableBody.appendChild(row);
-
-    idCounter++;
-
-    form.reset();
+    fetch('http://localhost:3000/produtos', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            nome,
+            preco,
+            quantidade
+        })
+    })
+    .then(res => res.json())
+    .then(() => {
+        form.reset();
+        carregarProdutos();
+    });
 });
 
-tableBody.addEventListener("click", function (event) {
-    if (event.target.classList.contains("delete-btn")) {
-        event.target.closest("tr").remove();
-    }
-});
+// DELETE
+function deletarProduto(id) {
+    fetch(`http://localhost:3000/produtos/${id}`, {
+        method: 'DELETE'
+    })
+    .then(() => carregarProdutos());
+}
+
+// carregar ao abrir página
+carregarProdutos();
