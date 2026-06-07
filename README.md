@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 EasyInventory Descrição do Projeto
+=======
+EasyInventory
+Descrição do Projeto
+>>>>>>> d006f0068868e140f154df91db8391386e3febcc
 
 O EasyInventory é uma aplicação web desenvolvida para gerenciamento de estoque de produtos. O sistema permite cadastrar, listar, editar e excluir produtos, armazenando as informações em um banco de dados MySQL.
 
@@ -22,6 +27,7 @@ Banco de Dados: MySQL (XAMPP)
 
 =======Tecnologias Utilizadas=======
 
+<<<<<<< HEAD
 Front-end HTML5 CSS3 JavaScript
 
 Back-end Node.js Express.js CORS Dotenv
@@ -29,11 +35,31 @@ Back-end Node.js Express.js CORS Dotenv
 Banco de Dados MySQL
 
 Controle de Versão Git GitHub
+=======
+Front-end
+HTML5
+CSS3
+JavaScript
+
+Back-end
+Node.js
+Express.js
+CORS
+Dotenv
+
+Banco de Dados
+MySQL
+
+Controle de Versão
+Git
+GitHub
+>>>>>>> d006f0068868e140f154df91db8391386e3febcc
 
 ============Requisitos do Sistema===============
 
 Para executar a aplicação é necessário possuir:
 
+<<<<<<< HEAD
 Node.js versão 18 ou superior; npm instalado; MySQL 8.0 ou superior; Navegador web atualizado (Chrome, Edge ou Firefox); Git (opcional); Instalação e Execução;
 
 Clonar o repositório git clone https://github.com/jvpcis15-commits/EasyInventory.git
@@ -45,6 +71,28 @@ Instalar as dependências
 Na pasta backend:
 
 npm install 4. Criar o banco de dados CREATE DATABASE easyinventory;
+=======
+Node.js versão 18 ou superior;
+npm instalado;
+MySQL 8.0 ou superior;
+Navegador web atualizado (Chrome, Edge ou Firefox);
+Git (opcional);
+Instalação e Execução;
+
+1. Clonar o repositório
+git clone https://github.com/jvpcis15-commits/EasyInventory.git
+
+2. Acessar a pasta do projeto
+cd EasyInventory
+
+3. Instalar as dependências
+
+Na pasta backend:
+
+npm install
+4. Criar o banco de dados
+CREATE DATABASE easyinventory;
+>>>>>>> d006f0068868e140f154df91db8391386e3febcc
 
 Selecionar o banco:
 
@@ -54,6 +102,7 @@ Criar a tabela:
 
 CREATE TABLE produtos (
 
+<<<<<<< HEAD
 id INT AUTO_INCREMENT PRIMARY KEY,
 nome VARCHAR(100) NOT NULL,
 descricao TEXT,
@@ -64,6 +113,19 @@ created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 Configurar o arquivo .env
+=======
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    descricao TEXT,
+    preco DECIMAL(10,2) NOT NULL,
+    quantidade INT NOT NULL,
+    categoria VARCHAR(50),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+5. Configurar o arquivo .env
+
+>>>>>>> d006f0068868e140f154df91db8391386e3febcc
 Criar um arquivo .env dentro da pasta backend:
 
 DB_HOST=localhost
@@ -78,14 +140,25 @@ DB_PORT=3306
 
 PORT=3000
 
+<<<<<<< HEAD
 Executar o servidor
+=======
+6. Executar o servidor
+
+>>>>>>> d006f0068868e140f154df91db8391386e3febcc
 Na pasta backend:
 
 node server.js
 
 Mensagem esperada:
 
+<<<<<<< HEAD
 Conectado ao MySQL com sucesso! Servidor rodando na porta 3000 7. Executar o Front-end
+=======
+Conectado ao MySQL com sucesso!
+Servidor rodando na porta 3000
+7. Executar o Front-end
+>>>>>>> d006f0068868e140f154df91db8391386e3febcc
 
 Abrir o arquivo:
 
@@ -93,7 +166,12 @@ frontend/index.html
 
 ou utilizar a extensão Live Server do Visual Studio Code.
 
+<<<<<<< HEAD
 =========Funcionalidades=========== Requisitos Funcionais
+=======
+=========Funcionalidades===========
+Requisitos Funcionais
+>>>>>>> d006f0068868e140f154df91db8391386e3febcc
 
 RF01 – Cadastrar produtos
 
@@ -104,6 +182,7 @@ RF03 – Editar informações dos produtos
 RF04 – Excluir produtos
 
 RF05 – Armazenar dados em banco de dados
+<<<<<<< HEAD
 
 RF06 – Exibir mensagens de confirmação ao usuário
 
@@ -123,6 +202,50 @@ Durante o desenvolvimento foram aplicadas as seguintes práticas:
 
 Separação das responsabilidades utilizando o padrão MVC. Organização do código em pastas específicas. Utilização de nomes claros para variáveis e funções. Reutilização de funções sempre que possível. Padronização das rotas da API. Uso de variáveis de ambiente para informações sensíveis. Estrutura modular para facilitar manutenção e evolução do sistema. Testes da Aplicação
 
+=======
+
+RF06 – Exibir mensagens de confirmação ao usuário
+
+Requisitos Não Funcionais
+
+RNF01 – Interface simples e responsiva
+
+RNF02 – Tempo de resposta adequado
+
+RNF03 – Organização do código utilizando boas práticas
+
+=========Estrutura do Projeto===========
+
+EasyInventory
+│
+├── backend
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   ├── database
+│   ├── server.js
+│   └── .env
+│
+├── frontend
+│   ├── css
+│   ├── js
+│   └── index.html
+│
+└── README.md
+===========Práticas de Código Limpo==============
+
+Durante o desenvolvimento foram aplicadas as seguintes práticas:
+
+Separação das responsabilidades utilizando o padrão MVC.
+Organização do código em pastas específicas.
+Utilização de nomes claros para variáveis e funções.
+Reutilização de funções sempre que possível.
+Padronização das rotas da API.
+Uso de variáveis de ambiente para informações sensíveis.
+Estrutura modular para facilitar manutenção e evolução do sistema.
+Testes da Aplicação
+
+>>>>>>> d006f0068868e140f154df91db8391386e3febcc
 Foram realizados testes manuais para validar as funcionalidades principais:
 
 Cadastro de produtos.
@@ -141,7 +264,14 @@ Foram implementados testes automatizados para validar o funcionamento da API RES
 
 Os testes desenvolvidos verificam as principais operações CRUD da aplicação:
 
+<<<<<<< HEAD
 GET /produtos – Listagem de produtos cadastrados. POST /produtos – Cadastro de novos produtos. PUT /produtos/ – Atualização dos dados de um produto. DELETE /produtos/ – Exclusão de um produto.
+=======
+GET /produtos – Listagem de produtos cadastrados.
+POST /produtos – Cadastro de novos produtos.
+PUT /produtos/ – Atualização dos dados de um produto.
+DELETE /produtos/ – Exclusão de um produto.
+>>>>>>> d006f0068868e140f154df91db8391386e3febcc
 
 Os testes permitem validar automaticamente o comportamento da API, contribuindo para a identificação de erros e garantindo maior confiabilidade durante futuras manutenções e evoluções do sistema.
 
@@ -157,6 +287,7 @@ backend/tests/product.test.js
 
 O projeto utiliza o padrão arquitetural MVC (Model-View-Controller).
 
+<<<<<<< HEAD
 Model: responsável pelo acesso e manipulação dos dados no banco. Controller: responsável pela lógica da aplicação. View: responsável pela interface apresentada ao usuário.
 
 Esse padrão melhora a organização do código e facilita a manutenção do sistema.
@@ -166,3 +297,26 @@ Como Contribuir Faça um Fork do projeto. Crie uma branch para suas alterações
 João Vitor
 
 Projeto acadêmico desenvolvido para a disciplina de Análise e Desenvolvimento de Sistemas, com o objetivo de aplicar conceitos de desenvolvimento Full Stack, integração com banco de dados e arquitetura MVC
+=======
+Model: responsável pelo acesso e manipulação dos dados no banco.
+Controller: responsável pela lógica da aplicação.
+View: responsável pela interface apresentada ao usuário.
+
+Esse padrão melhora a organização do código e facilita a manutenção do sistema.
+
+Como Contribuir
+Faça um Fork do projeto.
+Crie uma branch para suas alterações:
+git checkout -b minha-feature
+Realize as modificações necessárias.
+Faça o commit:
+git commit -m "Descrição da alteração"
+Envie para o GitHub:
+git push origin minha-feature
+Abra um Pull Request para análise.
+Autor
+
+João Vitor
+
+Projeto acadêmico desenvolvido para a disciplina de Análise e Desenvolvimento de Sistemas, com o objetivo de aplicar conceitos de desenvolvimento Full Stack, integração com banco de dados e arquitetura MVC.
+>>>>>>> d006f0068868e140f154df91db8391386e3febcc
