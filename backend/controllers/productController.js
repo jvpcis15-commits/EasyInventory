@@ -34,7 +34,7 @@ exports.update = (req, res) => {
     Product.update(req.params.id, req.body, (err) => {
         if (err) return res.status(500).json(err);
 
-        res.json({ message: 'Produto atualizado!' });
+        res.json({ message: 'Produto atualizado com sucesso!' });
     });
 };
 
@@ -42,6 +42,6 @@ exports.remove = (req, res) => {
     Product.remove(req.params.id, (err) => {
         if (err) return res.status(500).json(err);
 
-        res.json({ message: 'Produto excluído!' });
+        res.json({ message: 'Produto excluído com sucesso!' });
     });
 };
