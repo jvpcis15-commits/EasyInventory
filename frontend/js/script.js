@@ -4,7 +4,20 @@ const tableBody = document.getElementById("productTableBody");
 let editandoId = null;
 
 
-// 📌 CARREGAR PRODUTOS (READ)
+//  TOAST (mensagens)
+function mostrarToast(mensagem, tipo = "success") {
+    const toast = document.getElementById("toast");
+
+    toast.textContent = mensagem;
+    toast.className = `toast show ${tipo}`;
+
+    setTimeout(() => {
+        toast.className = "toast";
+    }, 2000);
+}
+
+
+//  CARREGAR PRODUTOS (READ)
 function carregarProdutos() {
     fetch('http://localhost:3000/produtos')
         .then(res => res.json())
@@ -36,11 +49,14 @@ function carregarProdutos() {
                 tableBody.appendChild(row);
             });
         })
-        .catch(err => console.error("Erro ao carregar produtos:", err));
+        .catch(err => {
+            console.error(err);
+            mostrarToast("Erro ao carregar produtos!", "error");
+        });
 }
 
 
-// 📌 CREATE + UPDATE
+//  CREATE + UPDATE
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -56,7 +72,7 @@ form.addEventListener("submit", function (event) {
         categoria
     };
 
-    // 🔥 EDITAR (PUT)
+    //  UPDATE
     if (editandoId) {
         fetch(`http://localhost:3000/produtos/${editandoId}`, {
             method: 'PUT',
@@ -65,16 +81,22 @@ form.addEventListener("submit", function (event) {
             },
             body: JSON.stringify(dados)
         })
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) throw new Error();
+            return res.json();
+        })
         .then(() => {
             editandoId = null;
             form.reset();
             carregarProdutos();
+            mostrarToast("Produto atualizado com sucesso!");
         })
-        .catch(err => console.error(err));
+        .catch(() => {
+            mostrarToast("Erro ao atualizar produto!", "error");
+        });
 
     } else {
-        // 🔥 CRIAR (POST)
+        //  CREATE
         fetch('http://localhost:3000/produtos', {
             method: 'POST',
             headers: {
@@ -82,17 +104,23 @@ form.addEventListener("submit", function (event) {
             },
             body: JSON.stringify(dados)
         })
-        .then(res => res.json())
+        .then(res => {
+            if (!res.ok) throw new Error();
+            return res.json();
+        })
         .then(() => {
             form.reset();
             carregarProdutos();
+            mostrarToast("Produto salvo com sucesso!");
         })
-        .catch(err => console.error(err));
+        .catch(() => {
+            mostrarToast("Erro ao salvar produto!", "error");
+        });
     }
 });
 
 
-// 📌 EDITAR PRODUTO
+//  EDITAR
 function editarProduto(id, nome, preco, quantidade, categoria) {
     document.getElementById("nome").value = nome;
     document.getElementById("preco").value = preco;
@@ -100,21 +128,28 @@ function editarProduto(id, nome, preco, quantidade, categoria) {
     document.getElementById("categoria").value = categoria;
 
     editandoId = id;
+    mostrarToast("Editando produto...");
 }
 
 
-// 📌 DELETE
+//  DELETE
 function deletarProduto(id) {
     fetch(`http://localhost:3000/produtos/${id}`, {
         method: 'DELETE'
     })
-    .then(res => res.json())
+    .then(res => {
+        if (!res.ok) throw new Error();
+        return res.json();
+    })
     .then(() => {
         carregarProdutos();
+        mostrarToast("Produto excluído com sucesso!");
     })
-    .catch(err => console.error(err));
+    .catch(() => {
+        mostrarToast("Erro ao excluir produto!", "error");
+    });
 }
 
 
-// 📌 INICIALIZAR
+//  INICIALIZAR
 carregarProdutos();
