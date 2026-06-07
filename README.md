@@ -1,119 +1,100 @@
-<<<<<<< HEAD
-EasyInventory Descrição do Projeto
-=======
 EasyInventory
 Descrição do Projeto
->>>>>>> d006f0068868e140f154df91db8391386e3febcc
 
-O EasyInventory é uma aplicação web desenvolvida para gerenciamento de estoque de produtos. O sistema permite cadastrar, listar, editar e excluir produtos, armazenando as informações em um banco de dados MySQL.
+O EasyInventory é uma aplicação web para gerenciamento de estoque de produtos. O sistema permite cadastrar, listar, editar e excluir produtos, armazenando as informações em um banco de dados MySQL.
 
-O objetivo do projeto é aplicar conceitos de desenvolvimento web Full Stack, integrando uma interface simples com uma API REST desenvolvida em Node.js e um banco de dados relacional.
+O projeto foi desenvolvido com o objetivo de aplicar conceitos de desenvolvimento Full Stack, integração entre front-end e back-end, utilização de banco de dados relacional, controle de versão com Git e aplicação de boas práticas de desenvolvimento de software.
 
 Ambiente de Desenvolvimento
 
-O projeto foi desenvolvido utilizando:
+O projeto foi desenvolvido utilizando o seguinte ambiente:
 
 Sistema Operacional: Windows 11
-
 Editor de Código: Visual Studio Code
-
 Controle de Versão: Git
-
 Repositório Remoto: GitHub
-
 Ambiente de Execução: Node.js
-
+Gerenciador de Pacotes: npm
 Banco de Dados: MySQL (XAMPP)
-
-=======Tecnologias Utilizadas=======
-
-<<<<<<< HEAD
-Front-end HTML5 CSS3 JavaScript
-
-Back-end Node.js Express.js CORS Dotenv
-
-Banco de Dados MySQL
-
-Controle de Versão Git GitHub
-=======
+Tecnologias Utilizadas
 Front-end
 HTML5
 CSS3
 JavaScript
-
 Back-end
 Node.js
 Express.js
 CORS
 Dotenv
-
 Banco de Dados
 MySQL
-
+Testes
+Jest
+Supertest
 Controle de Versão
 Git
 GitHub
->>>>>>> d006f0068868e140f154df91db8391386e3febcc
-
-============Requisitos do Sistema===============
+Requisitos do Sistema
 
 Para executar a aplicação é necessário possuir:
 
-<<<<<<< HEAD
-Node.js versão 18 ou superior; npm instalado; MySQL 8.0 ou superior; Navegador web atualizado (Chrome, Edge ou Firefox); Git (opcional); Instalação e Execução;
-
-Clonar o repositório git clone https://github.com/jvpcis15-commits/EasyInventory.git
-
-Acessar a pasta do projeto cd EasyInventory
-
-Instalar as dependências
-
-Na pasta backend:
-
-npm install 4. Criar o banco de dados CREATE DATABASE easyinventory;
-=======
-Node.js versão 18 ou superior;
-npm instalado;
-MySQL 8.0 ou superior;
-Navegador web atualizado (Chrome, Edge ou Firefox);
-Git (opcional);
-Instalação e Execução;
-
-1. Clonar o repositório
+Node.js versão 18 ou superior
+npm instalado
+MySQL 8.0 ou superior
+Navegador web atualizado (Google Chrome, Microsoft Edge ou Mozilla Firefox)
+Git (opcional)
+Estrutura do Projeto
+EasyInventory
+│
+├── backend
+│   ├── controllers
+│   │   └── productController.js
+│   │
+│   ├── models
+│   │   └── productModel.js
+│   │
+│   ├── routes
+│   │   └── productRoutes.js
+│   │
+│   ├── tests
+│   │   └── product.test.js
+│   │
+│   ├── database
+│   │   └── connection.js
+│   │
+│   ├── server.js
+│   └── .env
+│
+├── frontend
+│   ├── css
+│   │   └── style.css
+│   │
+│   ├── js
+│   │   └── script.js
+│   │
+│   └── index.html
+│
+└── README.md
+Instalação e Configuração
+1. Clonar o Repositório
 git clone https://github.com/jvpcis15-commits/EasyInventory.git
-
-2. Acessar a pasta do projeto
+2. Acessar o Projeto
 cd EasyInventory
+3. Instalar Dependências
 
-3. Instalar as dependências
+Acesse a pasta backend:
 
-Na pasta backend:
-
+cd backend
 npm install
-4. Criar o banco de dados
-CREATE DATABASE easyinventory;
->>>>>>> d006f0068868e140f154df91db8391386e3febcc
+4. Criar o Banco de Dados
 
-Selecionar o banco:
+Execute os comandos abaixo no MySQL:
+
+CREATE DATABASE easyinventory;
 
 USE easyinventory;
 
-Criar a tabela:
-
 CREATE TABLE produtos (
-
-<<<<<<< HEAD
-id INT AUTO_INCREMENT PRIMARY KEY,
-nome VARCHAR(100) NOT NULL,
-descricao TEXT,
-preco DECIMAL(10,2) NOT NULL,
-quantidade INT NOT NULL,
-categoria VARCHAR(50),
-created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-Configurar o arquivo .env
-=======
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     descricao TEXT,
@@ -122,195 +103,113 @@ Configurar o arquivo .env
     categoria VARCHAR(50),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+5. Configurar Variáveis de Ambiente
 
-5. Configurar o arquivo .env
-
->>>>>>> d006f0068868e140f154df91db8391386e3febcc
-Criar um arquivo .env dentro da pasta backend:
+Crie um arquivo .env na pasta backend:
 
 DB_HOST=localhost
-
 DB_USER=root
-
 DB_PASSWORD=sua_senha
-
 DB_NAME=easyinventory
-
 DB_PORT=3306
 
 PORT=3000
+Executando a Aplicação
+Iniciar o Back-end
 
-<<<<<<< HEAD
-Executar o servidor
-=======
-6. Executar o servidor
-
->>>>>>> d006f0068868e140f154df91db8391386e3febcc
 Na pasta backend:
 
 node server.js
 
-Mensagem esperada:
+Saída esperada:
 
-<<<<<<< HEAD
-Conectado ao MySQL com sucesso! Servidor rodando na porta 3000 7. Executar o Front-end
-=======
 Conectado ao MySQL com sucesso!
 Servidor rodando na porta 3000
-7. Executar o Front-end
->>>>>>> d006f0068868e140f154df91db8391386e3febcc
+Iniciar o Front-end
 
-Abrir o arquivo:
+Abra o arquivo:
 
 frontend/index.html
 
-ou utilizar a extensão Live Server do Visual Studio Code.
+ou utilize a extensão Live Server do Visual Studio Code.
 
-<<<<<<< HEAD
-=========Funcionalidades=========== Requisitos Funcionais
-=======
-=========Funcionalidades===========
+Funcionalidades
 Requisitos Funcionais
->>>>>>> d006f0068868e140f154df91db8391386e3febcc
-
 RF01 – Cadastrar produtos
-
 RF02 – Listar produtos cadastrados
-
 RF03 – Editar informações dos produtos
-
 RF04 – Excluir produtos
-
 RF05 – Armazenar dados em banco de dados
-<<<<<<< HEAD
-
 RF06 – Exibir mensagens de confirmação ao usuário
-
 Requisitos Não Funcionais
-
 RNF01 – Interface simples e responsiva
-
 RNF02 – Tempo de resposta adequado
-
 RNF03 – Organização do código utilizando boas práticas
-
-=========Estrutura do Projeto===========
-
-EasyInventory │ ├── backend │ ├── controllers │ ├── models │ ├── routes │ ├── database │ ├── server.js │ └── .env │ ├── frontend │ ├── css │ ├── js │ └── index.html │ └── README.md ===========Práticas de Código Limpo==============
+Práticas de Código Limpo
 
 Durante o desenvolvimento foram aplicadas as seguintes práticas:
 
-Separação das responsabilidades utilizando o padrão MVC. Organização do código em pastas específicas. Utilização de nomes claros para variáveis e funções. Reutilização de funções sempre que possível. Padronização das rotas da API. Uso de variáveis de ambiente para informações sensíveis. Estrutura modular para facilitar manutenção e evolução do sistema. Testes da Aplicação
-
-=======
-
-RF06 – Exibir mensagens de confirmação ao usuário
-
-Requisitos Não Funcionais
-
-RNF01 – Interface simples e responsiva
-
-RNF02 – Tempo de resposta adequado
-
-RNF03 – Organização do código utilizando boas práticas
-
-=========Estrutura do Projeto===========
-
-EasyInventory
-│
-├── backend
-│   ├── controllers
-│   ├── models
-│   ├── routes
-│   ├── database
-│   ├── server.js
-│   └── .env
-│
-├── frontend
-│   ├── css
-│   ├── js
-│   └── index.html
-│
-└── README.md
-===========Práticas de Código Limpo==============
-
-Durante o desenvolvimento foram aplicadas as seguintes práticas:
-
-Separação das responsabilidades utilizando o padrão MVC.
-Organização do código em pastas específicas.
-Utilização de nomes claros para variáveis e funções.
-Reutilização de funções sempre que possível.
-Padronização das rotas da API.
+Separação de responsabilidades utilizando MVC.
+Organização dos arquivos por camadas.
+Utilização de nomes claros para variáveis, funções e arquivos.
+Reutilização de funções para evitar duplicação de código.
+Estrutura modular para facilitar manutenção.
 Uso de variáveis de ambiente para informações sensíveis.
-Estrutura modular para facilitar manutenção e evolução do sistema.
-Testes da Aplicação
+Padronização das rotas da API REST.
+Comentários em trechos importantes do código.
 
->>>>>>> d006f0068868e140f154df91db8391386e3febcc
-Foram realizados testes manuais para validar as funcionalidades principais:
+Essas práticas tornam o sistema mais organizado, legível e fácil de manter.
 
-Cadastro de produtos.
+Testes Automatizados
 
-Listagem de produtos.
-
-Atualização de produtos.
-
-Exclusão de produtos.
-
-===========Integração entre Front-end, API e banco de dados.==========
-
-Testes da Aplicação
-
-Foram implementados testes automatizados para validar o funcionamento da API REST utilizando as bibliotecas Jest e Supertest.
+Foram implementados testes automatizados utilizando Jest e Supertest para validar o funcionamento da API REST.
 
 Os testes desenvolvidos verificam as principais operações CRUD da aplicação:
 
-<<<<<<< HEAD
-GET /produtos – Listagem de produtos cadastrados. POST /produtos – Cadastro de novos produtos. PUT /produtos/ – Atualização dos dados de um produto. DELETE /produtos/ – Exclusão de um produto.
-=======
-GET /produtos – Listagem de produtos cadastrados.
-POST /produtos – Cadastro de novos produtos.
-PUT /produtos/ – Atualização dos dados de um produto.
-DELETE /produtos/ – Exclusão de um produto.
->>>>>>> d006f0068868e140f154df91db8391386e3febcc
+GET /produtos – Listagem de produtos.
+POST /produtos – Cadastro de produtos.
+PUT /produtos/ – Atualização de produtos.
+DELETE /produtos/ – Exclusão de produtos.
 
-Os testes permitem validar automaticamente o comportamento da API, contribuindo para a identificação de erros e garantindo maior confiabilidade durante futuras manutenções e evoluções do sistema.
-
-Para executar os testes automatizados, utilize o comando:
+Para executar os testes:
 
 npm test
 
-Os testes estão localizados na pasta:
+Os testes estão localizados em:
 
 backend/tests/product.test.js
 
-===========Padrão de Projeto Utilizado==============
+A utilização de testes automatizados contribui para a qualidade do software, permitindo identificar falhas rapidamente durante futuras alterações.
+
+Padrão de Projeto Utilizado
 
 O projeto utiliza o padrão arquitetural MVC (Model-View-Controller).
 
-<<<<<<< HEAD
-Model: responsável pelo acesso e manipulação dos dados no banco. Controller: responsável pela lógica da aplicação. View: responsável pela interface apresentada ao usuário.
+Model
 
-Esse padrão melhora a organização do código e facilita a manutenção do sistema.
+Responsável pelo acesso aos dados e comunicação com o banco MySQL.
 
-Como Contribuir Faça um Fork do projeto. Crie uma branch para suas alterações: git checkout -b minha-feature Realize as modificações necessárias. Faça o commit: git commit -m "Descrição da alteração" Envie para o GitHub: git push origin minha-feature Abra um Pull Request para análise. Autor
+Controller
 
-João Vitor
+Responsável pela lógica de negócio e processamento das requisições.
 
-Projeto acadêmico desenvolvido para a disciplina de Análise e Desenvolvimento de Sistemas, com o objetivo de aplicar conceitos de desenvolvimento Full Stack, integração com banco de dados e arquitetura MVC
-=======
-Model: responsável pelo acesso e manipulação dos dados no banco.
-Controller: responsável pela lógica da aplicação.
-View: responsável pela interface apresentada ao usuário.
+View
 
-Esse padrão melhora a organização do código e facilita a manutenção do sistema.
+Responsável pela interface gráfica desenvolvida com HTML, CSS e JavaScript.
+
+Routes
+
+Responsável pelo mapeamento dos endpoints da API.
+
+A utilização do padrão MVC promove melhor organização, manutenção e escalabilidade da aplicação.
 
 Como Contribuir
 Faça um Fork do projeto.
-Crie uma branch para suas alterações:
+Crie uma branch para sua funcionalidade:
 git checkout -b minha-feature
-Realize as modificações necessárias.
-Faça o commit:
-git commit -m "Descrição da alteração"
+Realize suas alterações.
+Faça o commit das modificações:
+git commit -m "Minha nova funcionalidade"
 Envie para o GitHub:
 git push origin minha-feature
 Abra um Pull Request para análise.
@@ -318,5 +217,4 @@ Autor
 
 João Vitor
 
-Projeto acadêmico desenvolvido para a disciplina de Análise e Desenvolvimento de Sistemas, com o objetivo de aplicar conceitos de desenvolvimento Full Stack, integração com banco de dados e arquitetura MVC.
->>>>>>> d006f0068868e140f154df91db8391386e3febcc
+Projeto acadêmico desenvolvido para a disciplina de Análise e Desenvolvimento de Sistemas, com o objetivo de aplicar conceitos de desenvolvimento Full Stack, integração com banco de dados, arquitetura MVC e testes automatizados.
