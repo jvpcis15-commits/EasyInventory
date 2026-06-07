@@ -4,7 +4,7 @@ const connection = require('../database/connection');
 
 
 // 📌 READ - listar produtos
-router.get('/produtos', (req, res) => {
+router.get('/', (req, res) => {
     connection.query('SELECT * FROM produtos', (err, results) => {
         if (err) return res.status(500).json(err);
         res.json(results);
@@ -13,12 +13,12 @@ router.get('/produtos', (req, res) => {
 
 
 // 📌 CREATE - inserir produto
-router.post('/produtos', (req, res) => {
-    const { nome, preco, quantidade } = req.body;
+router.post('/', (req, res) => {
+    const { nome, preco, quantidade, categoria } = req.body;
 
-    connection.query(
-        'INSERT INTO produtos (nome, preco, quantidade) VALUES (?, ?, ?)',
-        [nome, preco, quantidade],
+   connection.query(
+    'INSERT INTO produtos (nome, preco, quantidade, categoria) VALUES (?, ?, ?, ?)',
+    [nome, preco, quantidade, categoria],
         (err, result) => {
             if (err) return res.status(500).json(err);
 
@@ -32,7 +32,7 @@ router.post('/produtos', (req, res) => {
 
 
 // 📌 UPDATE - editar produto
-router.put('/produtos/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     const { id } = req.params;
     const { nome, preco, quantidade } = req.body;
 
@@ -55,7 +55,7 @@ router.put('/produtos/:id', (req, res) => {
 
 
 // 📌 DELETE - remover produto
-router.delete('/produtos/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     const { id } = req.params;
 
     connection.query(
