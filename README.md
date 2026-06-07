@@ -183,7 +183,26 @@ Exclusão de produtos.
 
 ===========Integração entre Front-end, API e banco de dados.==========
 
-Atualmente o projeto não possui testes automatizados implementados. Como melhoria futura, podem ser utilizados frameworks como Jest e Supertest para automatizar os testes da API.
+Testes da Aplicação
+
+Foram implementados testes automatizados para validar o funcionamento da API REST utilizando as bibliotecas Jest e Supertest.
+
+Os testes desenvolvidos verificam as principais operações CRUD da aplicação:
+
+GET /produtos – Listagem de produtos cadastrados.
+POST /produtos – Cadastro de novos produtos.
+PUT /produtos/ – Atualização dos dados de um produto.
+DELETE /produtos/ – Exclusão de um produto.
+
+Os testes permitem validar automaticamente o comportamento da API, contribuindo para a identificação de erros e garantindo maior confiabilidade durante futuras manutenções e evoluções do sistema.
+
+Para executar os testes automatizados, utilize o comando:
+
+npm test
+
+Os testes estão localizados na pasta:
+
+backend/tests/product.test.js
 
 ===========Padrão de Projeto Utilizado==============
 
